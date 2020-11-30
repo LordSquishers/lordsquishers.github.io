@@ -3,6 +3,7 @@ const WebSocketServer = require('websocket').server;
 
 const server = http.createServer();
 server.listen(process.env.PORT || 9898);
+console.log(process.env.PORT);
 
 const wsServer = new WebSocketServer({
     httpServer: server
