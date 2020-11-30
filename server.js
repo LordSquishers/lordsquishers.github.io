@@ -1,9 +1,12 @@
-console.log("Server script loaded!")
 const http = require('http');
-const static = require('node-static');
-const file = new static.Server('./');
+const port = process.env.PORT || 3000
+
 const server = http.createServer((req, res) => {
-    req.addListener('end', () => file.serve(req, res)).resume();
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.end('<h1>Monkey Pog</h1>');
 });
-const port = 3210;
-server.listen(port, () => console.log('Server running at http://URL:3210'))
+
+server.listen(port,() => {
+  console.log('Server running at port '+port);
+});
