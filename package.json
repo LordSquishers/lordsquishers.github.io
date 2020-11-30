@@ -1,0 +1,24 @@
+{
+  "name": "monkeypog-base",
+  "version": "1.0.0",
+  "description": "Hosting for monkeypog stats.",
+  "main": "server.js",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordSquishers/monkeypog-base.git"
+  },
+  "author": "LordSquishers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LordSquishers/monkeypog-base/issues"
+  },
+  "homepage": "https://github.com/LordSquishers/monkeypog-base#readme"
+}

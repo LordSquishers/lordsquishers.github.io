@@ -6,4 +6,4 @@ const server = http.createServer((req, res) => {
     req.addListener('end', () => file.serve(req, res)).resume();
 });
 const port = 3210;
-server.listen(port, () => console.log('Server running at http://lordsquishers.github.io:${port}'))
+server.listen(port, () => console.log('Server running at http://URL:3210'))
