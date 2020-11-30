@@ -12,7 +12,7 @@ server.listen(port,() => {
   console.log('Server running at port '+port);
 });
 
-const ws = new Websocket('ws://localhost:' + port);
+const ws = new WebSocket('ws://localhost:' + port);
 ws.addEventListener('open', () => {
     ws.send('CONNECTION_SUCCESS');
 });
