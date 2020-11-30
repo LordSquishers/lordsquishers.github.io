@@ -10,3 +10,11 @@ const server = http.createServer((req, res) => {
 server.listen(port,() => {
   console.log('Server running at port '+port);
 });
+
+const ws = new Websocket('ws://localhost:' + port);
+ws.addEventListener('open', () => {
+    ws.send('CONNECTION_SUCCESS');
+});
+ws.addEventListener('message', event => {
+    console.log(event.data);
+});
