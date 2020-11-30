@@ -1,25 +1,16 @@
 {
-  "name": "monkeypog-base",
+  "name": "js-socket-examples",
   "version": "1.0.0",
-  "description": "Hosting for monkeypog stats.",
-  "main": "server.js",
-  "dependencies": {
-    "node-static": "^0.7.11",
-    "ws": "^7.4.0"
-  },
-  "devDependencies": {},
+  "description": "Some socket examples with Node.js and PubNub",
+  "main": "client.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node websocket-server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LordSquishers/monkeypog-base.git"
-  },
-  "author": "LordSquishers",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LordSquishers/monkeypog-base/issues"
-  },
-  "homepage": "https://github.com/LordSquishers/monkeypog-base#readme"
+  "keywords": [],
+  "author": "Adam Bavosa <adamb@pubnub.com>",
+  "license": "MIT",
+  "dependencies": {
+    "websocket": "^1.0.32"
+  }
 }
