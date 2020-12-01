@@ -21,9 +21,9 @@ router.addRoute("GET /index.html", (req, res, params) => {
     fs.createReadStream(file).pipe(res);
 });
 
-router.addRoute("GET /construction.js", (req, res, params) => {
-    let file = __dirname + '/construction.js';
-    res.writeHead(200, {"Content-Type": "text/javascript"});
+router.addRoute("GET /char.txt", (req, res, params) => {
+    let file = __dirname + '/char.txt';
+    res.writeHead(200, {"Content-Type": "text/plain"});
     fs.createReadStream(file).pipe(res);
 });
 
