@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="refresh" content="15">
     <title>Monkey Pog - Base</title>
+  </head>
+  <body>
+    <h2 id="titleHeader">Welcome to Monkey Pog</h2>
+    <p1 id="charDisplay">Charcoal Storage: --.--% full</p1>
     <script>
         function loadFile(filePath) {
             var result = null;
@@ -18,9 +22,5 @@
         var data = loadFile('char.txt')
         document.getElementById('charDisplay').innerHTML = data.toString();
     </script>
-  </head>
-  <body>
-    <h2 id="titleHeader">Welcome to Monkey Pog</h2>
-    <p1 id="charDisplay">Charcoal Storage: --.--% full</p1>
   </body>
 </html>
