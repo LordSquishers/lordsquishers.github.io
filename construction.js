@@ -1,5 +1,6 @@
 // pog
 console.log('Construction initialized!');
+const fs = require('fs');
 
 fs.readFile('char.txt', function (err, data) {
    if (err) {
