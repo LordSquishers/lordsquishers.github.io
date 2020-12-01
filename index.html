@@ -4,7 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="refresh" content="15">
     <title>Monkey Pog - Base</title>
-    <script src="construction.js"></script>
+    <script>
+        const fs = require('fs');
+
+        fs.readFile('char.txt', function (err, data) {
+           if (err) {
+              return console.error(err);
+           }
+           document.getElementById('charDisplay').innerHTML = data.toString();
+        });
+    </script>
   </head>
   <body>
     <h2 id="titleHeader">Welcome to Monkey Pog</h2>
