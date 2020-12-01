@@ -11,6 +11,7 @@
   "author": "Adam Bavosa <adamb@pubnub.com>",
   "license": "MIT",
   "dependencies": {
+    "routes": "^2.1.0",
     "websocket": "^1.0.32"
   }
 }
