@@ -5,14 +5,18 @@
     <meta http-equiv="refresh" content="15">
     <title>Monkey Pog - Base</title>
     <script>
-        const fs = require('fs');
-
-        fs.readFile('char.txt', function (err, data) {
-           if (err) {
-              return console.error(err);
-           }
-           document.getElementById('charDisplay').innerHTML = data.toString();
-        });
+        function loadFile(filePath) {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", filePath, false);
+            xmlhttp.send();
+            if (xmlhttp.status==200) {
+                result = xmlhttp.responseText;
+            }
+            return result;
+        }
+        var data = loadFile('char.txt')
+        document.getElementById('charDisplay').innerHTML = data.toString();
     </script>
   </head>
   <body>
