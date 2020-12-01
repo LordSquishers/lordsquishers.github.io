@@ -7,6 +7,8 @@ var port = process.env.PORT || 9898;
 var Router = require('routes');
 var router = Router();
 
+var webpage = require('./construction')
+
 router.addRoute("GET /", (req, res, params) => {
     let file = __dirname + '/index.html';
     res.writeHead(200, {"Content-Type": "text/html"});
@@ -50,7 +52,8 @@ wsServer.on('request', function(request) {
       if(message.utf8Data.startsWith('CHARCOAL:')) {
         var splits = message.utf8Data.split(':');
         // call construction.js function to update index
-        console.log(splits[1]);
+        console.log('Received charcoal data from base: ' + splits[1]);
+        webpage.updateCharcoal(parseInt(splits[1]).toFixed(2))
       }
       connection.sendUTF('RECEIVED');
     });
