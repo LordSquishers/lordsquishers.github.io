@@ -1,9 +1,9 @@
 // pog
 console.log('Construction initialized!');
 
-let updateCharcoal = function (percent) {
-    console.log('Displaying charcoal data: ' + percent)
-    document.getElementById("charDisplay").innerHTML = "Charcoal Storage: " + percent + "% full"
-};
-
-exports.updateCharcoal = updateCharcoal;
+fs.readFile('char.txt', function (err, data) {
+   if (err) {
+      return console.error(err);
+   }
+   document.getElementById('charDisplay').innerHTML = data.toString();
+});

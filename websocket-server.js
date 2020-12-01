@@ -53,7 +53,12 @@ wsServer.on('request', function(request) {
         var splits = message.utf8Data.split(':');
         // call construction.js function to update index
         console.log('Received charcoal data from base: ' + splits[1]);
-        webpage.updateCharcoal(parseInt(splits[1]).toFixed(2))
+        fs.writeFile('char.txt', splits[1], function(err) {
+           if (err) {
+              return console.error(err);
+           }
+           console.log("Data written successfully");
+        });
       }
       connection.sendUTF('RECEIVED');
     });
