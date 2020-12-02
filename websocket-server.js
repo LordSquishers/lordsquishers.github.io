@@ -90,7 +90,7 @@ wsServer.on('request', function(request) {
           charHistStream = fs.createWriteStream("charHistory.txt", {flags:'a'});
           var currentdate = new Date();
           charHistStream.write(
-                "Last Sync (CC ping 20 sec): " + currentdate.getDate() + "/"
+                "File created at: (CC ping 20 sec): " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/"
                 + currentdate.getFullYear() + " @ "
                 + currentdate.getHours() + ":"
