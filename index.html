@@ -27,5 +27,10 @@
         var charcoalPercentage = loadFile('char.txt')
         document.getElementById('charDisplay').innerHTML = 'Charcoal Storage: ' + charcoalPercentage.toString() + "% full";
     </script>
+
+    <form action="https://monkey-pog.herokuapp.com/charHistory.txt">
+      <input type="submit" value="View History" />
+    </form>
+
   </body>
 </html>
