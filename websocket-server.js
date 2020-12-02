@@ -51,7 +51,7 @@ wsServer.on('request', function(request) {
       console.log('Received Message:', message.utf8Data);
       if(message.utf8Data.startsWith('CHARCOAL_PERCENT:')) {
         var splits = message.utf8Data.split(':');
-        // call construction.js function to update index
+        // write to a file because i don't want to deal with data synchronization.
         console.log('Received charcoal data from base: ' + splits[1]);
         fs.writeFile('char.txt', (100 * parseFloat(splits[1])).toFixed(2), function(err) {
            if (err) {

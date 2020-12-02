@@ -9,6 +9,7 @@
     <h2 id="titleHeader">Welcome to Monkey Pog</h2>
     <p1 id="charDisplay">Charcoal Storage: --.--% full</p1>
     <script>
+        // loads data from file to avoid sync issues.
         function loadFile(filePath) {
             var result = null;
             var xmlhttp = new XMLHttpRequest();
@@ -19,8 +20,8 @@
             }
             return result;
         }
-        var data = loadFile('char.txt')
-        document.getElementById('charDisplay').innerHTML = 'Charcoal Storage: ' + data.toString() + "% full";
+        var charcoalPercentage = loadFile('char.txt')
+        document.getElementById('charDisplay').innerHTML = 'Charcoal Storage: ' + charcoalPercentage.toString() + "% full";
     </script>
   </body>
 </html>
