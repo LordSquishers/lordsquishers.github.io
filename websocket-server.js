@@ -27,6 +27,12 @@ router.addRoute("GET /char.txt", (req, res, params) => {
     fs.createReadStream(file).pipe(res);
 });
 
+router.addRoute("GET /charHistory.txt", (req, res, params) => {
+    let file = __dirname + '/charHistory.txt';
+    res.writeHead(200, {"Content-Type": "text/plain"});
+    fs.createReadStream(file).pipe(res);
+});
+
 const server = http.createServer(function (req, res) {
   var match = router.match(req.method + ' ' + req.url);
   console.log(req.method + ' ' + req.url)
@@ -65,7 +71,7 @@ wsServer.on('request', function(request) {
         if(charHistStream == null) {
           charHistStream = fs.createWriteStream("char.txt", {flags:'a'});
         }
-        stream.write(percentage + "\n");
+        charHistStream.write(percentage + "\n");
 
       }
       connection.sendUTF('RECEIVED');
