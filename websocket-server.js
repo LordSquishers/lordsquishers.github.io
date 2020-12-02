@@ -69,7 +69,7 @@ wsServer.on('request', function(request) {
         });
 
         if(charHistStream == null) {
-          charHistStream = fs.createWriteStream("char.txt", {flags:'a'});
+          charHistStream = fs.createWriteStream("charHistory.txt", {flags:'a'});
         }
         charHistStream.write(percentage + "\n");
 
