@@ -33,6 +33,24 @@ router.addRoute("GET /charHistory.txt", (req, res, params) => {
     fs.createReadStream(file).pipe(res);
 });
 
+router.addRoute("GET /apple-touch-icon.png", (req, res, params) => {
+    let file = __dirname + '/apple-touch-icon.png';
+    res.writeHead(200, {"Content-Type": "image/png"});
+    fs.createReadStream(file).pipe(res);
+});
+
+router.addRoute("GET /favicon-32x32.png", (req, res, params) => {
+    let file = __dirname + '/favicon-32x32.png';
+    res.writeHead(200, {"Content-Type": "image/png"});
+    fs.createReadStream(file).pipe(res);
+});
+
+router.addRoute("GET /favicon-16x16.png", (req, res, params) => {
+    let file = __dirname + '/favicon-16x16.png';
+    res.writeHead(200, {"Content-Type": "image/png"});
+    fs.createReadStream(file).pipe(res);
+});
+
 const server = http.createServer(function (req, res) {
   var match = router.match(req.method + ' ' + req.url);
   console.log(req.method + ' ' + req.url)
