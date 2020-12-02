@@ -88,6 +88,14 @@ wsServer.on('request', function(request) {
 
         if(charHistStream == null) {
           charHistStream = fs.createWriteStream("charHistory.txt", {flags:'a'});
+          var currentdate = new Date();
+          charHistStream.write(
+                var datetime = "Last Sync (CC ping 20 sec): " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/"
+                + currentdate.getFullYear() + " @ "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds() + "\n\n");
         }
         charHistStream.write(percentage + "\n");
 
