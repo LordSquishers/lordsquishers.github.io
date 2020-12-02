@@ -39,6 +39,7 @@ const server = http.createServer(function (req, res) {
 
 server.listen(port);
 console.log('Hosting on port: ' + port);
+var charHistStream;
 
 const wsServer = new WebSocketServer({
     httpServer: server
@@ -53,12 +54,19 @@ wsServer.on('request', function(request) {
         var splits = message.utf8Data.split(':');
         // write to a file because i don't want to deal with data synchronization.
         console.log('Received charcoal data from base: ' + splits[1]);
-        fs.writeFile('char.txt', (100 * parseFloat(splits[1])).toFixed(2), function(err) {
+        var percentage = (100 * parseFloat(splits[1])).toFixed(2);
+        fs.writeFile('char.txt', percentage, function(err) {
            if (err) {
               return console.error(err);
            }
            console.log("Data written successfully");
         });
+
+        if(charHistStream == null) {
+          charHistStream = fs.createWriteStream("char.txt", {flags:'a'});
+        }
+        stream.write(percentage + "\n");
+
       }
       connection.sendUTF('RECEIVED');
     });
